@@ -143,6 +143,9 @@ tools on your system:
 
 The recommended way to install the Haskell tools is via [GHCup](https://www.haskell.org/ghcup/). Its installation script will guide you through the installation, and warn you about packages that you have to make sure are installed in the system (the ones described on the step above). Check [this page](https://www.haskell.org/ghcup/install/) for further explanation on the installation process.
 
+**Note:** After installing ghcup, if you still get ```ghcup: command not found```, simply add the following line to ~/.bashrc (or ~/.zshrc) and restart your terminal: 
+```export PATH="$HOME/.ghcup/bin:$PATH"``` 
+
 :::caution
 On Windows, we discussed how to install GHCup in the step above, depending on how you want to install MSYS2.
 :::
@@ -388,7 +391,7 @@ mkdir -p ~/.local/bin
 cp -p "$(cabal list-bin cardano-node)" ~/.local/bin/
 cp -p "$(cabal list-bin cardano-cli)" ~/.local/bin/
 ```
-**Note:** If cardano-cli does not build with 'cabal build all', run 'cabal build cardano-cli'.
+
 **Note:** `~/.local/bin` should be in the `$PATH`.
 
 Note, we avoid using `cabal install` because that method prevents the installed binaries from reporting
